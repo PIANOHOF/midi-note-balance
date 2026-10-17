@@ -1,0 +1,78 @@
+{
+  "tool": "MIDI Note Balance",
+  "schema_version": 1,
+  "analysis_status": "explicit_event_ledger",
+  "balance_available": true,
+  "smf_type": 0,
+  "track_count": 1,
+  "ppqn": 480,
+  "duration_ticks": 960,
+  "note_on_events": 4,
+  "note_off_events_including_zero_velocity": 4,
+  "zero_velocity_note_on_events": 1,
+  "matched_explicit_pairs": 3,
+  "open_note_on_count": 1,
+  "open_note_ons": [
+    {
+      "port": "default",
+      "channel": 1,
+      "note": 67,
+      "tick": 480,
+      "track": 1,
+      "event": 8,
+      "velocity": 90
+    }
+  ],
+  "unmatched_note_off_count": 1,
+  "unmatched_note_offs": [
+    {
+      "port": "default",
+      "channel": 1,
+      "note": 72,
+      "tick": 480,
+      "track": 1,
+      "event": 9
+    }
+  ],
+  "overlap_count": 0,
+  "overlapping_note_ons": [],
+  "ambiguous_order_count": 0,
+  "ambiguous_order_examples": [],
+  "channel_mode_event_count": 1,
+  "channel_mode_events": [
+    {
+      "port": "default",
+      "channel": 1,
+      "tick": 960,
+      "track": 1,
+      "event": 11,
+      "controller": 123,
+      "value": 0,
+      "name": "All Notes Off"
+    }
+  ],
+  "last_stored_cc64_value_count": 1,
+  "last_stored_cc64_values": [
+    {
+      "port": "default",
+      "channel": 1,
+      "last_stored_value": 0,
+      "tick": 480,
+      "track": 1,
+      "event": 10
+    }
+  ],
+  "logical_ports": [
+    "default"
+  ],
+  "row_limit_per_list": 2000,
+  "lists_truncated": false,
+  "rules": [
+    "Explicit Note On/Off pairing only; Note On velocity zero counts as Off.",
+    "FIFO for repeated same-note Note Ons; overlaps are reported, not declared invalid.",
+    "Channel-mode commands and sustain are listed but do not replace explicit Note Offs in this ledger.",
+    "The default route is separate from each explicit MIDI Port identifier; actual DAW routing is unknown.",
+    "Ticks are stored positions, not seconds; no sounding-voice, release-tail or hardware diagnosis.",
+    "No MIDI outputs, audio, SysEx execution, networking or source-file changes."
+  ]
+}
